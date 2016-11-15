@@ -1,0 +1,20 @@
+{
+  "name": "zoneLike",
+  "version": "1.0.0",
+  "description": "针对老项目的前后端分离重构方案",
+  "main": "config.js",
+  "scripts": {
+    "start": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yumwey/zoneLike.git"
+  },
+  "keywords": ["webpack+gulp+sass"],
+  "author": "Yumwey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yumwey/zoneLike/issues"
+  },
+  "homepage": "https://github.com/Yumwey/zoneLike#readme"
+}
