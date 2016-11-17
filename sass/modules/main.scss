@@ -1,0 +1,19 @@
+@import "../variables/color";
+
+html,body{
+    padding:0;
+    margin:0;
+    height:100%;
+    width:100%;
+}
+.viewports {
+    /* background: $primaryColor; */
+    height: 100%;
+    width:100%;
+    h2{
+        width:30%;
+        margin:{
+            left:40%;
+        }
+    }
+}
