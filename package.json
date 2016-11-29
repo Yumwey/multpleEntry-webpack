@@ -25,24 +25,30 @@
     "babel-loader": "^6.2.6",
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
-    "connect": "^3.5.0",
     "css-loader": "^0.25.0",
+    "debug": "^2.3.3",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
     "glob": "^7.1.1",
     "html-webpack-plugin": "^2.24.1",
     "json-loader": "^0.5.4",
-    "node-sass": "^3.12.5",
-    "node-sass-middleware": "^0.10.0",
     "postcss-loader": "^1.0.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
-    "serve-static": "^1.11.1",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.3",
     "webpack-dashboard": "^0.2.0",
+    "webpack-dev-middleware": "^1.8.4",
     "webpack-dev-server": "^1.16.2",
     "webpack-plugin-notifier": "^0.1.0"
+  },
+  "dependencies": {
+    "connect": "^3.5.0",
+    "node-sass-middleware": "^0.9.8",
+    "serve-static": "^1.8.1"
+  },
+  "engines": {
+    "node": ">= 0.10.21"
   }
 }

@@ -1,19 +1,21 @@
 @import "../variables/color";
-
-html,body{
-    padding:0;
-    margin:0;
-    height:100%;
-    width:100%;
+html,
+body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    color: red;
 }
+
 .viewports {
     /* background: $primaryColor; */
     height: 100%;
-    width:100%;
-    h2{
-        width:30%;
-        margin:{
-            left:40%;
+    width: 100%;
+    h2 {
+        width: 30%;
+        margin: {
+            left: 40%;
         }
     }
 }
