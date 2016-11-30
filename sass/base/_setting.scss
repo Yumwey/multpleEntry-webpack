@@ -1,0 +1,16 @@
+//设置mix或者function
+
+@mixin opacity($opacity:50) {
+  opacity: $opacity / 100;
+  filter: alpha(opacity=$opacity);
+}
+
+@mixin line-block{
+    display: inline-block;
+    display: inline;
+}
+
+@mixin font-height($h){
+    height: $h;
+    line-height: $h;
+}

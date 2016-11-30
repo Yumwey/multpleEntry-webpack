@@ -1,11 +1,14 @@
 @import "../variables/color";
+@import "../components/btn.scss";
+@import "../base/_reset.scss";
+
 html,
 body {
     padding: 0;
     margin: 0;
     height: 100%;
     width: 100%;
-    color: red;
+    color: $middleColor;
 }
 
 .viewports {
@@ -16,6 +19,14 @@ body {
         width: 30%;
         margin: {
             left: 40%;
+        };
+        font-size: .2rem;
+    }
+    .btn_group{
+        &>.cm-btn{
+            margin: {
+                left:10px;
+            }
         }
     }
 }

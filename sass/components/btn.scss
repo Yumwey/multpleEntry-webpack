@@ -1,0 +1,48 @@
+//按钮组件库
+@import "../variables/_color.scss";
+@import "../base/_setting.scss";
+
+ .cm-btn {
+    display: inline-block;
+    margin-bottom: 0;
+    padding: .5em 1em;
+    vertical-align: middle;
+    font-size: .6rem;
+    font-weight: 400;
+    @include font-height(1.2rem);
+    text-align: center;
+    white-space: nowrap;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 0;
+    cursor: pointer;
+    outline: 0;
+    -webkit-appearance: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: background-color .3s ease-out, border-color .3s ease-out;
+    transition: background-color .3s ease-out, border-color .3s ease-out;
+}
+.cm-btn-primary {
+    color:$whiteFont;
+    background: $primaryClolr;
+    border-color: $primaryClolr;
+    width: 3rem;
+}
+.cm-btn-success {
+    color:$whiteFont;
+    background: $middleColor;
+    border-color: $middleColor;
+    width: 3rem;
+}
+.cm-btn-warn {
+    color:$whiteFont;
+    background: $redColor;
+    border-color: $redColor;
+    width: 3rem;
+}
+.cm-btn-radius{
+    border-radius:2px;
+}

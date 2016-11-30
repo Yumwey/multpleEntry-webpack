@@ -1,6 +1,6 @@
 //选型使用的是Express,并没有使用koa,因为没学过. 😀
 
-var PORT = process.env.PORT || 8024;;
+var PORT = process.env.PORT || 8025;;
 
 var http = require('http');
 var url = require('url');

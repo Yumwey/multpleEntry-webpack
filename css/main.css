@@ -1,10 +1,64 @@
+.cm-btn {
+  display: inline-block;
+  margin-bottom: 0;
+  padding: .5em 1em;
+  vertical-align: middle;
+  font-size: .6rem;
+  font-weight: 400;
+  height: 1.2rem;
+  line-height: 1.2rem;
+  text-align: center;
+  white-space: nowrap;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 0;
+  cursor: pointer;
+  outline: 0;
+  -webkit-appearance: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: background-color .3s ease-out, border-color .3s ease-out;
+  transition: background-color .3s ease-out, border-color .3s ease-out;
+}
+
+.cm-btn-primary {
+  color: white;
+  background: #87CEFF;
+  border-color: #87CEFF;
+  width: 3rem;
+}
+
+.cm-btn-success {
+  color: white;
+  background: #71C671;
+  border-color: #71C671;
+  width: 3rem;
+}
+
+.cm-btn-warn {
+  color: white;
+  background: #CD5B45;
+  border-color: #CD5B45;
+  width: 3rem;
+}
+
+.cm-btn-radius {
+  border-radius: 2px;
+}
+
+a, ins {
+  text-decoration: none;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
   height: 100%;
   width: 100%;
-  color: red;
+  color: #71C671;
 }
 
 .viewports {
@@ -16,4 +70,9 @@ body {
 .viewports h2 {
   width: 30%;
   margin-left: 40%;
+  font-size: .2rem;
+}
+
+.viewports .btn_group > .cm-btn {
+  margin-left: 10px;
 }
