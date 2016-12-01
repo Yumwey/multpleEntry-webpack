@@ -3,6 +3,11 @@
 var webpack = require('webpack');
 var glob = require('glob');
 var path = require('path');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var WebpackNotifierPlugin = require('webpack-plugin-notifier');
+var UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
+var CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
+var DefinePlugin = webpack.DefinePlugin;
 var config = require('./config.js');
 
 //路径 
@@ -17,17 +22,18 @@ var deps = [
 var files = glob.sync(path.join(__dirname,'/dev/*/main.js'));
 var otherEntries = {};
 console.log(files);
-file.forEach(function(f){
+files.forEach(function(f){
      //查找每个功能目录入口文件及对应绝对路径
     var fn = /.*(\/.*?\/main)\.js/.exec(f)[1];  //匹配 [name]/main.js
     otherEntries[fn] = f;
 })
-
-var config = {
+//可以设置其他可定制entry入口
+var specifyEntries = {};
+var configs = {
     //使用sourceMap
     devtool:config.devTool.EVA,
     //输入路径
-    entry:Object.assign({},config.entry,otherEntries),
+    entry:Object.assign({},specifyEntries,otherEntries),
     //输出路径
     output:{
         path:config.sourceUrl.dir_dist,
@@ -83,7 +89,17 @@ var config = {
          new ExtractTextPlugin('[name].css'),
          //new DashboardPlugin()
         // new ExtractTextPlugin('stylesheets/[name].less')
-    ]
+    ],
+    devServer: {
+            // hot: true,
+            noInfo: false,
+            inline: true,
+            publicPath: path.join(process.cwd(),'/dist'),
+            stats: {
+                cached: false,
+                colors: true
+            }
+        }
 }
 
-module.exports = config;
+module.exports = configs;

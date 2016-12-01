@@ -4,7 +4,8 @@
   "description": "针对老项目的前后端分离重构方案",
   "main": "config.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "build":"webpack"
   },
   "repository": {
     "type": "git",

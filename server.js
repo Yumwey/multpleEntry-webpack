@@ -10,13 +10,13 @@ var path = require('path');
 var connect = require('connect');
 var sassMiddleware = require('node-sass-middleware');
 var serveStatic = require('serve-static');
-
+var webpack = require('webpack');
 var webpack_dev = require('./webpack.config.js');
-
+var webpackMiddleware = require("webpack-dev-middleware");
 console.log(webpack_dev);
 var app = connect();
 
-//插入中间件:node-sass编译中间件
+//sass预编译处理：node-sass中间件
 var cssPath = path.join(__dirname, 'css');
 var sassPath = path.join(__dirname, 'sass/modules');
 app.use('/css', sassMiddleware({
@@ -26,7 +26,7 @@ app.use('/css', sassMiddleware({
     outputStyle: 'expanded'
 }))
 app.use('./', serveStatic('./css', {}));
-//处理文件响应请求
+//处理文件响应请求：资源服务器处理
 app.use(function(request, response) {
     //请求文件路径
     var pathname = url.parse(request.url).pathname;
@@ -64,5 +64,10 @@ app.use(function(request, response) {
         }
     })
 })
+// webpack 开发环境配置
+
+var compiler = webpack(webpack_dev)
+app.use(webpackMiddleware(compiler,webpack_dev.devServer));
+
 var server = http.createServer(app).listen(PORT);
 console.log("服务运行中: 端口" + PORT + "，默认：http://127.0.0.1/.");
