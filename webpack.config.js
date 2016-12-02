@@ -39,7 +39,6 @@ files.forEach(function(f) {
 
 //可以设置其他可定制entry入口
 var specifyEntries = {};
-var pubPath = "/assets/";
 
 var baseConfigs = function(envConfig) {
     var configs = {
@@ -51,7 +50,7 @@ var baseConfigs = function(envConfig) {
         output: {
             path: config.sourceUrl.dir_dist,
             filename: '[name].js',
-            publicPath: pubPath //静态资源发布路径，处理资源访问
+            publicPath: '' //静态资源发布路径，处理资源访问
         },
         resolve: {
             //定义模块搜索路径
@@ -88,7 +87,7 @@ var baseConfigs = function(envConfig) {
                 },
                 { //url-loader依赖于file-loader
                     test: /\.(png|jpg|gif|woff|woff2|ttf|eot|svg|swf)$/,
-                    loader: 'url-loader?limit=8000&name=images/[hash:8].[name].[ext]'
+                    loader: 'url-loader?limit=8000&name=../images/[hash:8].[name].[ext]'
                 }
             ]
         },
@@ -108,11 +107,11 @@ var baseConfigs = function(envConfig) {
         var entryObj = configs.entry;
         configs.devServer = {
             // hot: true,
-            contentBase:'dist/js',
+            contentBase:'./dist/js',
             hot: true,
             noInfo: false,
             inline: true,
-            publicPath: pubPath,
+            publicPath: 'http://localhost:8025',
             stats: {
                 cached: false,
                 colors: true

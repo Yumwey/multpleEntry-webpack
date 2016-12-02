@@ -47,7 +47,6 @@ app.use(function(request, response) {
 
         //判断是否存在,文件错误处理
         fs.exists(realpath, function(exists) {
-            console.log(realpath);
             if (!exists) {
                 response.writeHead(404, {
                     'Content-Type': 'text/plain'
@@ -79,12 +78,12 @@ if (env === 'dev') {
     var webpack_dev = require('./webpack.dev.config.js');
     var compiler = webpack(webpack_dev);
 
-    console.log(webpack_dev);
     // compiler.apply(new DashboardPlugin());
     //使用webpack-dev-server 中间件
     app.use(webpackMiddleware(compiler, webpack_dev.devServer));
     //热加载HRM
     app.use(webpackHotMiddle(compiler));
+}else{
 }
 
 var server = http.createServer(app).listen(PORT);

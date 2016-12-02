@@ -5,7 +5,7 @@
   "main": "config.js",
   "scripts": {
     "start": "node server dev",
-    "build": "webpack"
+    "build": "webpack --config webpack.release.config.js"
   },
   "repository": {
     "type": "git",
@@ -31,6 +31,7 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
     "glob": "^7.1.1",
+    "gulp": "^3.9.1",
     "html-webpack-plugin": "^2.24.1",
     "json-loader": "^0.5.4",
     "postcss-loader": "^1.0.0",

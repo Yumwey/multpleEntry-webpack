@@ -76,3 +76,9 @@ body {
 .viewports .btn_group > .cm-btn {
   margin-left: 10px;
 }
+
+.viewports .cm-g-con {
+  background: url("../images/ab.jpg");
+  width: 100%;
+  height: 100%;
+}
