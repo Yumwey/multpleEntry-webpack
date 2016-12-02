@@ -55,8 +55,9 @@
 ---
 > 4.使用方式
  + cnpm i  下载包
- + npm start 打包
- + npm gulp  构建
+ + npm start 开发环境
+ + npm run build 生产环境  ps：这里有个问题，可能会因为项目文件实际发布地址问题，导致引用路径不对，这个时候，可以先走生产环境
+ + npm gulp  处理文件版本控制，gulp构建
 
  ---
- > 5. 操作系统是OSX 10.11.6，window有问题可反馈。
+ > 5. 操作系统是OSX 10.11.6，window7 测试无碍。
