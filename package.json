@@ -4,8 +4,8 @@
   "description": "针对老项目的前后端分离重构方案",
   "main": "config.js",
   "scripts": {
-    "start": "node server.js",
-    "build":"webpack"
+    "start": "node server dev",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -42,6 +42,7 @@
     "webpack-dashboard": "^0.2.0",
     "webpack-dev-middleware": "^1.8.4",
     "webpack-dev-server": "^1.16.2",
+    "webpack-hot-middleware": "^2.13.2",
     "webpack-plugin-notifier": "^0.1.0"
   },
   "dependencies": {

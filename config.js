@@ -9,7 +9,7 @@ var config = {
     },
     sourceUrl:{
         dir_entry:'dev',
-        dir_dist:path.join(__dirname,'/dist')
+        dir_dist:path.join(__dirname,'/dist/js')
     }
 }
 
