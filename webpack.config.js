@@ -19,7 +19,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 // var DashboardPlugin = require('webpack-dashboard/plugin');
 var config = require('./config.js');
 
-//路径 
+//路径
 var node_module_dir = path.join(__dirname, 'node_modules');
 
 var deps = [
@@ -50,7 +50,7 @@ var baseConfigs = function(envConfig) {
         output: {
             path: config.sourceUrl.dir_dist,
             filename: '[name].js',
-            publicPath: '' //静态资源发布路径，处理资源访问
+            //publicPath: '' //静态资源发布路径，处理资源访问
         },
         resolve: {
             //定义模块搜索路径
@@ -75,7 +75,7 @@ var baseConfigs = function(envConfig) {
                     loader: ExtractTextPlugin.extract("style-loader", "css-loader")
                 },
                 {
-                    //json文件读取 
+                    //json文件读取
                     test: /\.json$/,
                     loader: 'json'
                 },
@@ -93,7 +93,7 @@ var baseConfigs = function(envConfig) {
         },
         plugins: [
             //压缩文件
-            new UglifyJsPlugin(),
+            //new UglifyJsPlugin(),
             // new webpack.HotModuleReplacementPlugin(),
             // new webpack.optimize.CommonsChunkPlugin('vendor')
             //new WebpackNotifierPlugin()
@@ -106,12 +106,10 @@ var baseConfigs = function(envConfig) {
         console.log('添加开发环境');
         var entryObj = configs.entry;
         configs.devServer = {
-            // hot: true,
             contentBase:'./dist/js',
             hot: true,
             noInfo: false,
             inline: true,
-            publicPath: 'http://localhost:8025',
             stats: {
                 cached: false,
                 colors: true
@@ -125,6 +123,8 @@ var baseConfigs = function(envConfig) {
                 entryObj[key].push('webpack-hot-middleware/client?reload=true');
             }
         }
+        configs.plugins.push(new webpack.HotModuleReplacementPlugin())
+        configs.plugins.push(new webpack.NoErrorsPlugin())
     } else {
         console.log('添加生产环境');
     }
